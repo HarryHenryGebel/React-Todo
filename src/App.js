@@ -12,13 +12,13 @@ export default class App extends React.Component {
     };
   }
 
-  addTodo(todoText) {
+  addTodo = (todoText) => {
     // create a new TodoItem and add it to the list
     this.setState(
       {todoList: [...this.state.todoList, new TodoItem(todoText)]});
   }
 
-  clearCompleted() {
+  clearCompleted = () => {
     // remove any completed TodoItem instances from state
     this.setState({todoList: this.state.todoList.filter(
       (todoItem) => !todoItem.completed
