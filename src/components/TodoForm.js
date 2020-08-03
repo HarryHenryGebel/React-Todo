@@ -16,7 +16,7 @@ export default class TodoForm extends React.Component {
   }
 
   submitAndClear = () => {
-      this.addTodo(this.state.todoText);
+    this.addTodo(this.state.todoText);
     this.setState({todoText: ""});
   }
 
