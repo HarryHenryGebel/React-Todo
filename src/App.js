@@ -3,6 +3,7 @@ import "fontsource-roboto";
 
 import TodoForm from "./components/TodoForm";
 import TodoItem from "./components/TodoItem";
+import TodoList from "./components/TodoList";
 
 export default class App extends React.Component {
   constructor () {
@@ -29,10 +30,12 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>Gebeldo</h1>
-        <TodoForm addTodo={this.addTodo} clearCompleted={this.clearCompleted}/>
+        <TodoList todoList={this.state.todoList}/>
+        <TodoForm addTodo={this.addTodo}
+                  clearCompleted={this.clearCompleted}/>
       </div>
     );
   }
 }
 
-//  LocalWords:  TodoForm TodoItem
+//  LocalWords:  TodoForm TodoItem TodoList
