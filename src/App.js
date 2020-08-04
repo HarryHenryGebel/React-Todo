@@ -26,11 +26,21 @@ export default class App extends React.Component {
     )});
   }
 
+  // toggle completed state of a TodoItem
+  toggleCompleted = (toggleItem) => {
+    this.setState({todoList: this.state.todoList.map(
+      todoData =>
+        (todoData.id === toggleItem.id) ?
+        {...todoData, completed: !todoData.completed} :
+      todoData)});
+  }
+
   render() {
     return (
       <div>
         <h1>Gebeldo</h1>
-        <TodoList todoList={this.state.todoList}/>
+        <TodoList todoList={this.state.todoList}
+                  toggleCompleted={this.toggleCompleted}/>
         <TodoForm addTodo={this.addTodo}
                   clearCompleted={this.clearCompleted}/>
       </div>
